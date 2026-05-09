@@ -1,16 +1,55 @@
-# React + Vite
+# TaskFlow Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React frontend for the TaskFlow task management application.
 
-Currently, two official plugins are available:
+> **Status:** 🔨 In active development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What it does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Login and register pages with JWT authentication
+- Task dashboard — create, complete, and delete tasks
+- Priority levels (High, Medium, Low) with color coding
+- Due date support
+- Connects to TaskFlow Spring Boot backend
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React 19
+- Vite
+- Tailwind CSS
+- Axios
+
+---
+
+## Local Setup
+
+### Prerequisites
+- Node.js 18+
+- TaskFlow backend running on port 8080
+
+### Run the frontend
+
+```bash
+git clone https://github.com/aayushsolanki-1/taskflow-frontend.git
+cd taskflow-frontend
+npm install
+npm run dev
+```
+
+App runs on `http://localhost:5173`
+
+---
+
+## Backend
+
+Backend repo: [github.com/aayushsolanki-1/taskflow](https://github.com/aayushsolanki-1/taskflow)
+
+---
+
+## Author
+
+Aayush Solanki — [linkedin.com/in/aayushsolanki](https://linkedin.com/in/aayushsolanki)

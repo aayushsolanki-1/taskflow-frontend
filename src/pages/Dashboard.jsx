@@ -17,6 +17,19 @@ export default function Dashboard({ token, onLogout }) {
 
   useEffect(() => { fetchTasks() }, [])
 
+  const suggestPriority = async () => {
+    if (!title) return
+    try {
+      const res = await axios.post('http://localhost:8080/api/ai/suggest-priority', 
+        { title, description }, 
+        { headers }
+      )
+      setPriority(res.data.priority)
+    } catch (err) {
+      console.error('AI suggestion failed', err)
+    }
+  }
+
   const createTask = async () => {
     if (!title) return
     await axios.post('http://localhost:8080/api/tasks', { title, description, priority, dueDate }, { headers })
@@ -75,6 +88,12 @@ export default function Dashboard({ token, onLogout }) {
               <option value="MEDIUM">Medium</option>
               <option value="HIGH">High</option>
             </select>
+              <button
+              onClick={suggestPriority}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg transition text-sm font-semibold"
+              >
+                ✨ AI
+            </button>
             <input
               type="date"
               className="bg-gray-800 rounded-lg px-4 py-3 outline-none flex-1"

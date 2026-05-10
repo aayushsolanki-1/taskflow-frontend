@@ -20,7 +20,7 @@ export default function Dashboard({ token, onLogout }) {
   const suggestPriority = async () => {
     if (!title) return
     try {
-      const res = await axios.post('http://localhost:8080/api/ai/suggest-priority', 
+      const res = await axios.post('https://taskflow-production-7b10.up.railway.app/api/ai/suggest-priority', 
         { title, description }, 
         { headers }
       )
@@ -32,7 +32,7 @@ export default function Dashboard({ token, onLogout }) {
 
   const createTask = async () => {
     if (!title) return
-    await axios.post('http://localhost:8080/api/tasks', { title, description, priority, dueDate }, { headers })
+    await axios.post('https://taskflow-production-7b10.up.railway.app/api/tasks', { title, description, priority, dueDate }, { headers })
     setTitle('')
     setDescription('')
     setDueDate('')
@@ -40,12 +40,12 @@ export default function Dashboard({ token, onLogout }) {
   }
 
   const deleteTask = async (id) => {
-    await axios.delete(`http://localhost:8080/api/tasks/${id}`, { headers })
+    await axios.delete(`https://taskflow-production-7b10.up.railway.app/api/tasks/${id}`, { headers })
     fetchTasks()
   }
 
   const toggleComplete = async (task) => {
-    await axios.put(`http://localhost:8080/api/tasks/${task.id}`, { ...task, completed: !task.completed }, { headers })
+    await axios.put(`https://taskflow-production-7b10.up.railway.app/api/tasks/${task.id}`, { ...task, completed: !task.completed }, { headers })
     fetchTasks()
   }
 

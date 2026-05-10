@@ -10,7 +10,7 @@ export default function Register({ onSwitch }) {
 
   const handleRegister = async () => {
     try {
-      await axios.post('http://localhost:8080/api/auth/register', { username, email, password })
+      await axios.post('https://taskflow-production-7b10.up.railway.app/api/auth/register', { username, email, password })
       setSuccess('Account created! Please sign in.')
       setError('')
     } catch (err) {

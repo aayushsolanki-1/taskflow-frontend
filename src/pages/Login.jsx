@@ -8,7 +8,7 @@ export default function Login({ onSwitch, onLogin }) {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('http://localhost:8080/api/auth/login', { email, password })
+      const res = await axios.post('https://taskflow-production-7b10.up.railway.app/api/auth/login', { email, password })
       onLogin(res.data.token)
     } catch (err) {
       setError('Invalid email or password')

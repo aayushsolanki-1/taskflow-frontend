@@ -11,7 +11,7 @@ export default function Dashboard({ token, onLogout }) {
   const headers = { Authorization: `Bearer ${token}` }
 
   const fetchTasks = async () => {
-    const res = await axios.get('http://localhost:8080/api/tasks', { headers })
+    const res = await axios.get('https://taskflow-production-7b10.up.railway.app/api/tasks', { headers })
     setTasks(res.data)
   }
 
